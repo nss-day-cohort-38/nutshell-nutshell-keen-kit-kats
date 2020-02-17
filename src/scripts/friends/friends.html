@@ -5,20 +5,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="../../styles/main.css">
   <title>Everything In Your Nutshell</title>
 </head>
 
 <body>
 
-  <img src="./images/fallSky.jpeg" class="background" alt="Fall Sky Image">
+  <img src="" class="background" alt="Fall Sky Image">
 
   <header id='headerContainer'>
     <section id="banner">
       <h1 id='bannerText'>Nutshell</h1>
-      <img src="./images/nutshell-logo.png" alt="Nutshell">
+      <img src="../../images/nutshell-logo.png" alt="Nutshell">
     </section>
-    <nav class="hidden" id="resourceButtons">
+    <nav id="resourceButtons">
       <button type="button" id="myFriends">Friends</button>
       <button type="button" id="myNews">News</button>
       <button type="button" id="myEvents">Events</button>
@@ -28,11 +28,14 @@
     </nav>
   </header>
 
-  <section id="mainContainer">
-
+  <section id="friend-header">
+    <h1>Friends List</h1>
   </section>
+  <div id="friend-list-container">
+    <ul id="friends-list"></ul>
+  </div>
 
-  <script type="module" src="./scripts/main.js"></script>
+  <script type="module" src="friends.js"></script>
 </body>
 
 </html>
