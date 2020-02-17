@@ -2,6 +2,9 @@ import dbAPI from "./dbAPI.js";
 import addToDom from "./addToDom.js";
 import { createHTML, createObjects } from "./createComponent.js";
 
+
+const passwordMinLength = 3
+
 const eventListeners = {
   loginButtonEventListener() {
     const mainContainer = document.getElementById("mainContainer");
@@ -86,6 +89,15 @@ const eventListeners = {
             // This is a successful new account creation
             // The newUserObject is POSTed, and then returns the new object
             // We then save the new object to session storage and wipe the login away
+    profileDropDownEventListener() {
+        const profileIcon = document.getElementById('profileIcon')
+
+        profileIcon.addEventListener('click', () => document.getElementById('profileDropDown').classList.toggle('hidden'))
+      },
+
+    logoutButtonEventListener() {
+        const logoutButton = document.getElementById('logout');
+        const mainContainer = document.getElementById('mainContainer');
 
             const newUserObject = createObjects.newUserObjectCreator(
               newUsername.value,
@@ -104,6 +116,13 @@ const eventListeners = {
                   .classList.toggle("hidden");
               });
           }
+                addToDom.addLoginForm();
+                // making nav buttons disappear
+                document.getElementById('resourceButtons').classList.toggle('hidden');
+                document.getElementById('profileIcon').classList.toggle('hidden');
+                // making drop-down disappear
+                document.getElementById('profileDropDown').classList.toggle('hidden');
+            }
         });
       }
     });

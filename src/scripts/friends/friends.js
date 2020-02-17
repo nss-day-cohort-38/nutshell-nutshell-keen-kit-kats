@@ -29,9 +29,9 @@ dbAPI
   });
 
 
-  dbAPI
-  .getFriends(resp => resp.json())
-  .then(friends => {
-      console.log(friends);
-    const activeUserId = (JSON.parse(sessionStorage.getItem("user"))).id;
-  });
+  // dbAPI
+  // .getFriends(resp => resp.json())
+  // .then(friends => {
+  //     console.log(friends);
+  //   const activeUserId = (JSON.parse(sessionStorage.getItem("user"))).id;
+  // });
