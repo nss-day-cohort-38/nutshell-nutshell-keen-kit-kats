@@ -9,6 +9,11 @@ putSendMessage() {
     chatContainer.addEventListener("click", event => {
       if ((event.target.id = sendButton)) {
         const messageInput = document.getElementById("writeMessage").value;
+        const id = document.getElementById("journalDate").value;
+        const userId = document.getElementById("concepts").value;
+        const message = document.getElementById("journalEntry").value;
+        // define structure of object to be put in API
+        const resourceObject = { id, userId, message, };
         //messageBody = event.target.value;
         dbAPI
         .putObjectByResource(resource, resourceObject)
