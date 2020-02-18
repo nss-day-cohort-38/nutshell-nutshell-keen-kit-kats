@@ -1,5 +1,5 @@
 import dbAPI from "../dbAPI.js";
-import renderChatRoom from "./renderMessages.js";
+//import renderChatRoom from "./renderMessages.js";
 import createMessageBoard from "./messageContainerFactory.js";
 
 //grab ref to mainContainer
