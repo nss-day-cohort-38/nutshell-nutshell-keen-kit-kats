@@ -16,7 +16,6 @@ eventListeners.signupButtonEventListener()
 eventListeners.logoutButtonEventListener()
 friendsEventListeners.friendsButtonEventListener()
 eventListeners.profileDropDownEventListener()
-eventListeners.logoutButtonEventListener()
 
 
 // calling My Profile Event Listeners
