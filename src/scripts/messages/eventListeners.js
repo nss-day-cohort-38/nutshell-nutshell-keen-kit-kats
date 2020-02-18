@@ -1,5 +1,6 @@
 import dbAPI from "../dbAPI.js";
 import addMessagesToDOM from "./messageContainerFactory.js"
+import createMessageBoard from "./messageContainerFactory.js"
 
 //grab ref to mainContainer
 // event needs to blow away what is on the page
@@ -17,13 +18,14 @@ const chatButtonClickEvent = {
     const chatButton = document.getElementById("chatButton");
     chatButton.addEventListener("click", () => {
       dbAPI.getMessages().then(dataFromAPi => {
+          console.log(dataFromAPi);
         const chatContainer = document.getElementById("chatContainer");
         //chatContainer.innerHTML = "";
         dataFromAPi.map(user => {
           const message = user.message;
           const userId = user.userId;
-         // const chatHTML = createMessageBoard(message);
-          //renderChatRoom(chatHTML);
+         const chatHTML = createMessageBoard(message);
+         //renderChatRoom(chatHTML);
 
         });
       });
@@ -32,8 +34,8 @@ const chatButtonClickEvent = {
 };
 
 const renderChatRoom = chatHTML => {
-  const mainContainer = document.getElementById("mainContainer");
-  mainContainer.innerHTML += chatHTML;
+  const chatContainer = document.getElementById("chatContainer");
+  chatContainer.innerHTML += chatHTML;
 };
 
 export default chatButtonClickEvent;
