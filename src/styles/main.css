@@ -25,7 +25,7 @@
     height: 100% !important;
     width: 100% !important;
     position: fixed !important;
-    z-index: -1;
+    z-index: -3;
     top: 0;
     left: 0;
 }
@@ -49,7 +49,7 @@ header {
     top: 0;
     left: 0;
     position: fixed;
-    
+
 }
 
 header section h1 {
@@ -150,14 +150,14 @@ nav button:hover {
     background-color: var(--mediumSage);
     color: white;
     font-weight: bold;
-    
+
 }
 
 #profileDropDown button:hover {
     background-color: var(--deepBlue);
     box-shadow: 1px 1px 1px var(--darkLiver);
     transition: 0.5s ease;
-}   
+}
 
 #logout:hover {
     color: white;
@@ -174,9 +174,11 @@ nav button:hover {
 
 /* mainContainer
 */
+
 #mainContainer {
     margin-top: 20%;
 }
+
 /*            Styling for welcome messages                  */
 
 .welcomeContainer {
@@ -227,7 +229,7 @@ nav button:hover {
     margin-left: auto;
     margin-right: auto;
 }
-/* Message Board Styling */
+/* ********* Message Board Styling************** */
 
 #chatContainer {
     position: fixed;
@@ -237,6 +239,8 @@ nav button:hover {
     height: 400px;
     margin-top: 100px;
     background-color: aliceblue;
+    overflow: scroll;
+    z-index: -1;
 }
 
  .shrink {
@@ -249,6 +253,12 @@ nav button:hover {
 .chat-room-field {
     position: absolute;
     bottom: 0;
+    z-index: 3;
+}
+
+.edit-message-button-container {
+    display: flex;
+    justify-content: flex-end;
 }
 /* ******* Begin My Profile Styling ********** */
 
@@ -265,6 +275,7 @@ nav button:hover {
     background-color: rgb(239, 168, 79);
     box-shadow: 5px 5px 5px 5px var(--darkLiver);
     border-radius: 5px;
+    z-index: 1;
 }
 
 #myProfileContainer img {

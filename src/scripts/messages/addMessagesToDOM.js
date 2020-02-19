@@ -6,7 +6,7 @@ const init = () => {
   const chatButton = document.getElementById("chatButton");
   chatButton.addEventListener("click", () => {
     document.getElementById("chatContainer").classList.toggle("hidden");
-    document.getElementById("mainContainer").classList.toggle("shrink");
+    document.getElementById("body").classList.toggle("shrink");
     document.getElementById("profileDropDown").classList.toggle("hidden");
     dbAPI.getMessagesExpanded().then(dataFromAPi => {
       const chatContainer = document.getElementById("message-list");

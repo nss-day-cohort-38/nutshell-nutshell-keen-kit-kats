@@ -1,7 +1,6 @@
 
 const chatButtonClickEvent = {
   exitMessages() {
-    //const chatContainer = document.getElementById("chatContainer");
     const exitMessagesButton = document.getElementById("chatButtonClose");
     exitMessagesButton.addEventListener("click", () => {
       const exitChat = document.getElementById("chatContainer");

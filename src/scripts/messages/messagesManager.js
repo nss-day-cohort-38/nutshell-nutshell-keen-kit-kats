@@ -22,7 +22,7 @@ const messageAPIManager = {
 
         const chatContainer = document.getElementById("message-list");
         chatContainer.innerHTML = '';
-  
+
         dbAPI.getMessagesExpanded().then(dataFromAPi => {
           dataFromAPi.forEach(data => {
 
