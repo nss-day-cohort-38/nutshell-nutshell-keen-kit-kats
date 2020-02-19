@@ -80,12 +80,11 @@ const eventsRenderToDom = {
         const currentUserId = (JSON.parse(sessionStorage.getItem('user'))).id;
 
         dbAPI.getFriends(currentUserId).then(friendDataArray => {
-            const friendsEventsContainer = document.getElementById('friendsEventsContainer')
-            friendsEventsContainer.innerHTML += `<h1 class ="sectionHeader" id="friendEventsHeader">Friends Events</h1>`
             friendDataArray.forEach(friendObj => {
                 const friendId = friendObj.user.id
                 dbAPI.getObjectByResource('events', friendId)
                     .then(friendsEvents=> {
+                        const friendsEventsContainer = document.getElementById('friendsEventsContainer')
                         friendsEventsContainer.innerHTML += `<h1 class ="objCards friendCardName">${friendObj.user.username} Events</h1>`
                         friendsEvents.forEach(friendEvent => {
                         friendsEventsContainer.innerHTML += eventHtmlComponents.createFriendEventCard(friendEvent)

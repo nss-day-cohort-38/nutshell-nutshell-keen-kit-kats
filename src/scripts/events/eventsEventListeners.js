@@ -55,7 +55,10 @@ const eventsEventListeners = {
                         event.id = parseInt(eventIdInput.value);
 
                         dbAPI.putObjectByResource("events", event)
-                            .then(eventsRenderToDom.renderEventCards)
+                            .then(() => {
+                                eventsRenderToDom.renderEventCards()
+                                eventsRenderToDom.renderFriendsEventsToDom()
+                            })
                     } else {
                         dbAPI.postObjectByResource("events", event)
                             .then(() => {
@@ -101,7 +104,10 @@ const eventsEventListeners = {
                 eventsRenderToDom.renderEventContainerWithCreateEventButton()
 
                 dbAPI.postObjectByResource("events", event)
-                    .then(eventsRenderToDom.renderEventCards)
+                    .then(() => {
+                        eventsRenderToDom.renderEventCards()
+                        eventsRenderToDom.renderFriendsEventsToDom()
+                    })
 
 
             }
