@@ -13,10 +13,10 @@ const eventsEventListeners = {
             const loggedInUserId = (JSON.parse(sessionStorage.getItem("user"))).id
 
             dbAPI.getObjectByResource("events", loggedInUserId)
-                .then(()=>{
-                eventsRenderToDom.renderEventContainerWithCreateEventButton()
-                eventsRenderToDom.renderEventCards()
-                eventsRenderToDom.renderFriendsEventsToDom()
+                .then(() => {
+                    eventsRenderToDom.renderEventContainerWithCreateEventButton()
+                    eventsRenderToDom.renderEventCards()
+                    eventsRenderToDom.renderFriendsEventsToDom()
                 })
         })
     },
@@ -58,7 +58,10 @@ const eventsEventListeners = {
                             .then(eventsRenderToDom.renderEventCards)
                     } else {
                         dbAPI.postObjectByResource("events", event)
-                            .then(eventsRenderToDom.renderEventCards)
+                            .then(() => {
+                                eventsRenderToDom.renderEventCards()
+                                eventsRenderToDom.renderFriendsEventsToDom()
+                            })
                     }
                 }
 
@@ -73,7 +76,10 @@ const eventsEventListeners = {
                     const eventIdToDelete = event.target.id.split("--")[1]
 
                     dbAPI.deleteObjectByResource("events", eventIdToDelete)
-                        .then(eventsRenderToDom.renderEventCards)
+                        .then(() => {
+                            eventsRenderToDom.renderEventCards()
+                            eventsRenderToDom.renderFriendsEventsToDom()
+                        })
 
                 }
             }
@@ -95,7 +101,7 @@ const eventsEventListeners = {
                 eventsRenderToDom.renderEventContainerWithCreateEventButton()
 
                 dbAPI.postObjectByResource("events", event)
-                            .then(eventsRenderToDom.renderEventCards)
+                    .then(eventsRenderToDom.renderEventCards)
 
 
             }
