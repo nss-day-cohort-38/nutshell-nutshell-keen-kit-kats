@@ -43,7 +43,7 @@ chatButtonClickEvent.exitMessages()
 
 
 // Friends event listeners
-friendsEventListeners.friendsButtonEventListener()
+//friendsEventListeners.friendsButtonEventListener()
 
 
 
@@ -71,8 +71,3 @@ eventsEventListeners.addSaveEventButtonEventListener();
 eventsEventListeners.addDeleteEventButtonEventListener();
 eventsEventListeners.addEditEventButtonEventListener();
 eventsEventListeners.addNevermindButtonEventListener();
-
-// Chat event listeners
-chatButtonClickEvent.chatButtonFirstClick()
-addMessagesToDOM.messageButtonEventListener()
-addMessagesToDOM.exitMessages()

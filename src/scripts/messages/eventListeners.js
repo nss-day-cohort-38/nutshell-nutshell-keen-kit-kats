@@ -9,7 +9,7 @@ const chatButtonClickEvent = {
       if ((event.target.id = exitMessagesButton.id)) {
         document.getElementById("chatButton").classList.toggle("display");
         document.getElementById("profileDropDown").classList.toggle("display");
-        document.getElementById("mainContainer").classList.toggle("shrink");
+        document.getElementById("body").classList.toggle("shrink");
       }
     });
   }
