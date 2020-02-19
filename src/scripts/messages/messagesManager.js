@@ -7,26 +7,22 @@ const messageAPIManager = {
     //const chatContainer = document.getElementById("chatContainer");
     const sendButton = document.getElementById("sendMessage");
     sendButton.addEventListener("click", () => {
-      const messageInput = document.getElementById("writeMessage").value;
-      let user = JSON.stringify(sessionStorage.getItem("user"));
-      let id = user.id;
-      let userId = user.userId;
-      let message = user.message;
+      const message = document.getElementById("writeMessage").value;
+      const userId = (JSON.parse(sessionStorage.getItem('user'))).id;
 
       // define structure of object to be put in API
       const resourceObject = {
-        "userId": userId,
-        "message": messageInput
+        userId,
+        message,
       };
       dbAPI
       .postObjectByResource("messages", resourceObject)
       .then(response => {
-        //console.log("response: ", response);
+        const chatContainer = document.getElementById("message-list");
+        chatContainer.innerHTML = '';
         dbAPI.getMessages().then(dataFromAPi => {
-          dataFromAPi.forEach(user => {
-            const chatContainer = document.getElementById("chatContainer")
-            chatContainer.innerHTML = "";
-            const message = user.message;
+          dataFromAPi.forEach(data => {
+            const message = data.message;
             const chatHTML = createMessageBoard(message);
             renderChatRoom(chatHTML);
           });
