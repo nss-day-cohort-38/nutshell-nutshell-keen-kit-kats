@@ -6,12 +6,7 @@ export function editMessagesButtonAction() {
       populateMessageFields(messageToEditId);
     }
   });
-}
-
-// event listener on save button, after user edits the journal
-// using PUT call to update the API with changes. Added a check in jounralManger.js to check initially if the entry feild has a hidden value. If it does, then the user is editing.
-// if it doesn't then it is a new load, or freshly loaded page.
-
+};
 const populateMessageFields = (messageId) => {
     const hiddenId = document.querySelector("#hiddenMessageId");
     const message = document.getElementById("writeMessage");
