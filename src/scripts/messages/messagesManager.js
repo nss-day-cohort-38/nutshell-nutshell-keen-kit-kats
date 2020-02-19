@@ -18,6 +18,7 @@ const messageAPIManager = {
       .postObjectByResource("messages", resource)
       .then((response) => {
         console.log("Message created: ", response);
+        document.getElementById("writeMessage").value = '';
 
         const chatContainer = document.getElementById("message-list");
         chatContainer.innerHTML = '';
