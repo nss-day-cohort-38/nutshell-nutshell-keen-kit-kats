@@ -8,6 +8,11 @@ const eventHtmlComponents = {
         <button class="createFormButton" id="createFormButton--events">Create Event</button>
             
         </article>
+        
+        <article class="objCards" id="objCards--events">
+        </article>
+        <article class="objCards friendsCards" id="friendsEventsContainer"></article>
+        
         `
     },
     createEventForm() {
@@ -31,14 +36,6 @@ const eventHtmlComponents = {
         <button class="saveFormButton" id="saveFormButton--events">Save Event</button>
 
         <button class="nevermindFormButton" id="nevermindFormButton--events">Nevermind</button>
-        `
-    },
-    createEventCardsContainer() {
-        return `
-        <article class="objCards" id="objCards--events">
-
-        </article>
-        <article class="objCards friendsCards" id="friendsEventsContainer"></article>
         `
     },
     createNoEventsMessage() {

@@ -38,15 +38,12 @@ const eventsRenderToDom = {
                 if (events.length === 0) {
                     eventsRenderToDom.renderEventContainerWithCreateEventButton()
 
-                    eventsRenderToDom.renderEventCardsContainer()
 
                     eventsRenderToDom.renderNoEventsMessage()
 
                 } else {
 
                     eventsRenderToDom.renderEventContainerWithCreateEventButton()
-
-                    eventsRenderToDom.renderEventCardsContainer()
 
                     const eventCardsContainer = document.getElementById("objCards--events");
 
