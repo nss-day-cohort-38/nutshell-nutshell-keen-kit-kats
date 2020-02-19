@@ -13,9 +13,11 @@ const eventsEventListeners = {
             const loggedInUserId = (JSON.parse(sessionStorage.getItem("user"))).id
 
             dbAPI.getObjectByResource("events", loggedInUserId)
-                .then(eventsRenderToDom.renderEventContainerWithCreateEventButton)
-                .then(eventsRenderToDom.renderEventCards)
-
+                .then(()=>{
+                eventsRenderToDom.renderEventContainerWithCreateEventButton()
+                eventsRenderToDom.renderEventCards()
+                eventsRenderToDom.renderFriendsEventsToDom()
+                })
         })
     },
     addCreateEventButtonEventListener() {

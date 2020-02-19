@@ -328,6 +328,19 @@ nav button:hover {
   align-content: center;
 }
 
+.objCards img {
+  width: 40px;
+}
+.friendCard {
+  background-color: var(--hansaYellow);
+}
+.friendCard h1{
+  color: white;
+  background-color: var(--deepBlue);
+  padding: 5px;
+  border-radius: 6px;
+}
+
 .cards {
   color: var(--darkLiver);
   width: 200px;
@@ -347,7 +360,7 @@ nav button:hover {
 
 .firstCard {
   background-color: rgba(99, 226, 198, 1);
-  margin: 5px;
+  /* margin: 5px; */
   text-shadow: 1px 2px 2px gray;
   width: 300px;
   border: 3px solid black;
@@ -356,12 +369,25 @@ nav button:hover {
 
 .otherCards {
   background-color: rgba(99, 226, 198, 0.7);
-  margin: 5px;
+  /* margin: 5px; */
+}
+
+.friendCard {
+  background-color: cornsilk;
+  font-style: italic;
+}
+
+.friendCardName{
+  color: white;
+  background-color: var(--deepBlue);
+  box-shadow: 3px 3px var(--darkLiver);
+  padding: 12px;
+  border-radius: 5px;
 }
 
 .newsCards__styles {
   background-color: hsl(192, 54%, 40%);
-  margin: 5px;
+  /* margin: 5px; */
 }
 
 /*   extra task card styling  */

@@ -38,6 +38,7 @@ const eventHtmlComponents = {
         <article class="objCards" id="objCards--events">
 
         </article>
+        <article class="objCards friendsCards" id="friendsEventsContainer"></article>
         `
     },
     createNoEventsMessage() {
@@ -47,28 +48,39 @@ const eventHtmlComponents = {
     },
     createEventCard(event) {
         return `
-            <div class="cards eventCards otherCards" id="cards--${event.id}">
-        
+            <figure class="cards eventCards otherCards" id="cards--${event.id}">
                 <h3>${event.name}</h3>
                 <h4>${event.location}</h4>
                 <p>${this.convertDateAndTime(event.date)}</p>
                 <button class="editFormButton" id="editFormButton--${event.id}">Edit Event</button>
                 <button class="deleteFormButton" id="deleteFormButton--${event.id}">Delete Event</button>
 
-            </div>
+            </figure>
         `
     },
+    
+    createFriendEventCard(event){
+        return `
+            <figure class="cards eventCards friendCard" id="cards--${event.id}">
+            <h1 class="userName" id="friendName">${event.user.username}</h1> 
+                <h3>${event.name}</h3>
+                <h4>${event.location}</h4>
+                <p>${this.convertDateAndTime(event.date)}</p>
+            </figure>
+        `
+    },
+    
     createFirstEventCard(event) {
         return `
-            <div class="cards eventCards firstCard" id="cards--${event.id}">
-        
+            <figure class="cards eventCards firstCard" id="cards--${event.id}">
+
                 <h2>${event.name}</h2>
                 <h3>${event.location}</h3>
                 <p><strong>${this.convertDateAndTime(event.date)}</strong></p>
                 <button class="editFormButton" id="editFormButton--${event.id}">Edit Event</button>
                 <button class="deleteFormButton" id="deleteFormButton--${event.id}">Delete Event</button>
 
-            </div>
+            </figure>
         `
     },
     createEditEventForm(event) {
