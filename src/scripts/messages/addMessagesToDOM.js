@@ -9,6 +9,8 @@ const init = () => {
     document.getElementById("mainContainer").classList.toggle("shrink");
     document.getElementById("profileDropDown").classList.toggle("hidden");
     dbAPI.getMessages().then(dataFromAPi => {
+      const chatContainer = document.getElementById("message-list");
+      chatContainer.innerHTML = "";
       dataFromAPi.forEach(user => {
         const message = user.message;
         const chatHTML = createMessageBoard(message);

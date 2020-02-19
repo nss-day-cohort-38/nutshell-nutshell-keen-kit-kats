@@ -13,17 +13,15 @@ const chatButtonClickEvent = {
     //const chatContainer = document.getElementById("chatContainer");
     const exitMessagesButton = document.getElementById("chatButtonClose");
     exitMessagesButton.addEventListener("click", () => {
-      // const exitChat = document.getElementById("chatContainer");
-      // exitChat.classList.toggle("hidden");
+      const exitChat = document.getElementById("chatContainer");
+      exitChat.classList.toggle("hidden");
 
-      console.log("click");
-      //if ((event.target.id = exitMessagesButton.id)) {
-        //document.getElementById("chatContainer").classList.toggle("hidden");
-        // document.getElementById("chatButton").classList.toggle("display");
-        // document.getElementById("profileDropDown").classList.toggle("display");
-        //document.getElementById("mainContainer").classList.toggle("shrink");
-      //}
-    }, false);
+      if ((event.target.id = exitMessagesButton.id)) {
+        document.getElementById("chatButton").classList.toggle("display");
+        document.getElementById("profileDropDown").classList.toggle("display");
+        document.getElementById("mainContainer").classList.toggle("shrink");
+      }
+    });
   }
 };
 
