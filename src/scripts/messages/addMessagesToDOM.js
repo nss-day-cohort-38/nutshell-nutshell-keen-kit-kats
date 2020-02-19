@@ -8,13 +8,16 @@ const init = () => {
     document.getElementById("chatContainer").classList.toggle("hidden");
     document.getElementById("mainContainer").classList.toggle("shrink");
     document.getElementById("profileDropDown").classList.toggle("hidden");
-    dbAPI.getMessages().then(dataFromAPi => {
+    dbAPI.getMessagesExpanded().then(dataFromAPi => {
       const chatContainer = document.getElementById("message-list");
       chatContainer.innerHTML = "";
-      dataFromAPi.forEach(user => {
-        const message = user.message;
-        const chatHTML = createMessageBoard(message);
-        //document.getElementById("chatContainer").innerHTML += createMessageBoard(message);
+      dataFromAPi.forEach(data => {
+
+        const message = data.message;
+        const userId = data.userId;
+        const username = data.user.username;
+
+        const chatHTML = createMessageBoard(message, userId, username);
         renderChatRoom(chatHTML);
       });
     });

@@ -1,14 +1,5 @@
 
 const chatButtonClickEvent = {
-  // chatButtonFirstClick() {
-  //   const chatButton = document.getElementById("chatButton");
-  //   chatButton.addEventListener("click", () => {
-  //     document.getElementById("chatContainer").innerHTML += createMessageBoard();
-  //     document.getElementById("chatContainer").classList.toggle("hidden");
-  //     document.getElementById("mainContainer").classList.toggle("shrink");
-  //     document.getElementById("profileDropDown").classList.toggle("hidden");
-  //   });
-  // },
   exitMessages() {
     //const chatContainer = document.getElementById("chatContainer");
     const exitMessagesButton = document.getElementById("chatButtonClose");

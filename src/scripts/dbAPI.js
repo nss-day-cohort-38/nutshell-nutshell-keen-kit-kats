@@ -45,8 +45,8 @@ const dbAPI = {
       body: JSON.stringify(keyValueObj)
     }).then(resp => resp.json());
   },
-  getMessages() {
-    return fetch(`${baseUrl}/messages`).then(resp => resp.json())
+  getMessagesExpanded() {
+    return fetch(`${baseUrl}/messages?_expand=user`).then(resp => resp.json())
   }
 };
 

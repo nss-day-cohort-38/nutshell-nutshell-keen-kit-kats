@@ -4,26 +4,32 @@ import createMessageBoard from "./messageContainerFactory.js";
 
 const messageAPIManager = {
   postSendMessage() {
-    //const chatContainer = document.getElementById("chatContainer");
     const sendButton = document.getElementById("sendMessage");
     sendButton.addEventListener("click", () => {
       const message = document.getElementById("writeMessage").value;
       const userId = (JSON.parse(sessionStorage.getItem('user'))).id;
 
-      // define structure of object to be put in API
-      const resourceObject = {
+      const resource = {
         userId,
         message,
       };
+
       dbAPI
-      .postObjectByResource("messages", resourceObject)
-      .then(response => {
+      .postObjectByResource("messages", resource)
+      .then((response) => {
+        console.log("Message created: ", response);
+
         const chatContainer = document.getElementById("message-list");
         chatContainer.innerHTML = '';
-        dbAPI.getMessages().then(dataFromAPi => {
+  
+        dbAPI.getMessagesExpanded().then(dataFromAPi => {
           dataFromAPi.forEach(data => {
+
             const message = data.message;
-            const chatHTML = createMessageBoard(message);
+            const userId = data.userId;
+            const username = data.user.username;
+            const chatHTML = createMessageBoard(message, userId, username);
+
             renderChatRoom(chatHTML);
           });
         });

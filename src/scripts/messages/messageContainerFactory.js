@@ -1,9 +1,8 @@
-const createMessageBoard = message => {
-  const currentUserObj = JSON.parse(sessionStorage.getItem("user"));
+const createMessageBoard = (message, userId, username) => {
   return `
       <div class="chat-room-landing-page">
-        <div id="messages">
-          ${currentUserObj.username}: ${message}
+        <div id="messages" data-user-id="${userId}">
+          <p>${username}: ${message}</p>
         </div>
       </div>
   `;
