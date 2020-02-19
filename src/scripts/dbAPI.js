@@ -46,7 +46,10 @@ const dbAPI = {
     }).then(resp => resp.json());
   },
   getMessagesExpanded() {
-    return fetch(`${baseUrl}/messages?_expand=user`).then(resp => resp.json())
+    return fetch(`${baseUrl}/messages?_expand=user`).then(resp => resp.json());
+  },
+  fetchObjectById(resource, id) {
+    return fetch(`${baseUrl}/${resource}/${id}`).then(resp => resp.json());
   }
 };
 
