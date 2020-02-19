@@ -16,8 +16,9 @@ const init = () => {
         const message = data.message;
         const userId = data.userId;
         const username = data.user.username;
+        const messageId = data.id
 
-        const chatHTML = createMessageBoard(message, userId, username);
+        const chatHTML = createMessageBoard(message, userId, username,messageId );
         renderChatRoom(chatHTML);
       });
     });

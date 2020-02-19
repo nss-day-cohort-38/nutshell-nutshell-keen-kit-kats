@@ -29,7 +29,8 @@ const messageAPIManager = {
             const message = data.message;
             const userId = data.userId;
             const username = data.user.username;
-            const chatHTML = createMessageBoard(message, userId, username);
+            const messageId = message.id;
+            const chatHTML = createMessageBoard(message, userId, username, messageId);
 
             renderChatRoom(chatHTML);
           });
