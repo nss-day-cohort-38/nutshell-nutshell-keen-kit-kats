@@ -3,46 +3,38 @@ import renderChatRoom from "./renderMessages.js";
 import createMessageBoard from "./messageContainerFactory.js";
 
 const messageAPIManager = {
-putSendMessage() {
-    const chatContainer = document.getElementById("chatContainer");
-    const sendButton = document.getElementById("sendMessage").id;
-    chatContainer.addEventListener("click", event => {
-      if ((event.target.id = sendButton)) {
-        const messageInput = document.getElementById("writeMessage");
-        const id = document.getElementById("").value;
-        const userId = document.getElementById("").value;
-        const message = document.getElementById("").value;
-        // define structure of object to be put in API
-        const resourceObject = { id, userId, message, };
-        //messageBody = event.target.value;
-        dbAPI
-        .putObjectByResource(resource, resourceObject)
-        .then(response => {
-          console.log(response);
-        });
+  postSendMessage() {
+    //const chatContainer = document.getElementById("chatContainer");
+    const sendButton = document.getElementById("sendMessage");
+    sendButton.addEventListener("click", () => {
+      const messageInput = document.getElementById("writeMessage").value;
+      let user = JSON.stringify(sessionStorage.getItem("user"));
+      let id = user.id;
+      let userId = user.userId;
+      let message = user.message;
+
+      // define structure of object to be put in API
+      const resourceObject = {
+        "userId": userId,
+        "message": messageInput
       };
+      dbAPI
+      .postObjectByResource("messages", resourceObject)
+      .then(response => {
+        //console.log("response: ", response);
+        dbAPI.getMessages().then(dataFromAPi => {
+          dataFromAPi.forEach(user => {
+            const chatContainer = document.getElementById("chatContainer")
+            chatContainer.innerHTML = "";
+            const message = user.message;
+            const chatHTML = createMessageBoard(message);
+            renderChatRoom(chatHTML);
+          });
+        });
+      })
+      .catch(err => console.log({ err }));
     });
   }
 };
 
-export default messageAPIManager
-
-
-
-const populateFields = Id => {
-  const id = document.querySelector("journalDate");
-  const journalConceptsInput = document.getElementById("concepts");
-  const journalEntryInput = document.getElementById("journalEntry");
-  const journalMoodInput = document.getElementById("mood");
-
-  fetch(`http://localhost:8088/entries/${journalId}`) // promise response, for put call. Buuilding the object by assigning values. These values are what will fill the entry fields, until the user makes an edit. When the user hits submit, it fires the PUT call.
-    .then(response => response.json())
-    .then(response => {
-      hiddenJournalId.value = response.id;
-      journalDateInput.value = response.journalDate;
-      journalConceptsInput.value = response.concepts;
-      journalEntryInput.value = response.journalEntry;
-      journalMoodInput.value = response.mood;
-    })
-    .catch(err => console.log(err));
-};
+export default messageAPIManager;

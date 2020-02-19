@@ -12,7 +12,7 @@ import messageAPIManager from "./messages/messagesManager.js"
 
 // Calling initial render of messages
 init()
-messageAPIManager.putSendMessage()
+messageAPIManager.postSendMessage()
 
 // Calling check if logged in conditional function!
 addToDom.checkIfLoggedIn()
@@ -35,7 +35,7 @@ profileEventListeners.submitChangedPasswordEventListener()
 
 
 // Calling messages event listeners
-chatButtonClickEvent.chatButtonFirstClick()
+//chatButtonClickEvent.chatButtonFirstClick()
 chatButtonClickEvent.exitMessages()
 
 

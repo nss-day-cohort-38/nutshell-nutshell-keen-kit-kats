@@ -1,5 +1,5 @@
 const renderChatRoom = chatHTML => {
-    const chatContainer = document.getElementById("chatContainer");
+    const chatContainer = document.getElementById("message-list");
     chatContainer.innerHTML += chatHTML;
   };
 
