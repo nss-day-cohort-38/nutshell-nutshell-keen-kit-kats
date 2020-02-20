@@ -17,7 +17,7 @@ const messageAPIManager = {
       };
       if (hiddenMessageId !== "") {
         dbAPI
-          .putNewMessage("messages", resource)
+          .editResource("messages", resource)
           .then(() => {
             document.getElementById("writeMessage").value = "";
 
