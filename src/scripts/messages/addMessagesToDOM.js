@@ -2,6 +2,7 @@ import dbAPI from "../dbAPI.js";
 import createMessageBoard from "./messageContainerFactory.js";
 import renderChatRoom from "./renderMessages.js";
 
+//function()
 const init = () => {
   const chatButton = document.getElementById("chatButton");
   //document.getElementById("messageList").scrollIntoView(true);
@@ -26,12 +27,10 @@ const init = () => {
           messageId
           );
           renderChatRoom(chatHTML);
-
-          //data.map
-        });
+        })
+        const messageContainerScroll = document.querySelector(".chat-room-landing-page");
+        messageContainerScroll.scrollIntoView(false);
       });
-      const messageContainerScroll = document.querySelector(".chat-room-landing-page");
-      messageContainerScroll.scrollIntoView(true);
     });
 };
 
