@@ -46,7 +46,7 @@ const messageAPIManager = {
           .catch(err => console.log({ err }));
       } else {
         dbAPI.postObjectByResource("messages", resource).then(response => {
-          console.log("Message created: ", response);
+          //console.log("Message created: ", response);
           document.getElementById("writeMessage").value = "";
 
           const chatContainer = document.getElementById("message-list");

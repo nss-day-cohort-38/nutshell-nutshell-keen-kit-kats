@@ -4,6 +4,7 @@ const createMessageBoard = (message, userId, username, messageId) => {
         <div id="messages" data-user-id="${userId}">
           <p><em>${username}:</em> ${message}</p>
           </div>
+          <div>
           <button id="editMessage--${messageId}" class="message-edit-button">Edit</button>
       </div>
   `;

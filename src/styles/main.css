@@ -233,6 +233,23 @@ nav button:hover {
 }
 /* ********* Message Board Styling************** */
 
+#chatHeader {
+  margin-top: 15px;
+  margin-left: 15px;
+  font-family: Georgia, serif;
+  font-size: 25px;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+  color: black;
+  font-weight: 700;
+  text-decoration: none solid rgb(68, 68, 68);
+  font-style: italic;
+  font-variant: small-caps;
+  text-transform: capitalize;
+  position: fixed;
+  border-bottom: solid black;
+}
+
 #chatContainer {
   border: 4px ridge var(--darkLiver);
   box-shadow: 2px 2px 2px 2px gray;
@@ -275,12 +292,61 @@ nav button:hover {
   position: absolute;
   bottom: 0;
   z-index: 3;
+  display: flex;
+  justify-content: space-between;
 }
 
-.edit-message-button-container {
+.chat-room-landing-page {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+flex-direction: row;
+flex-wrap: nowrap;
 }
+
+#chatButtonClose {
+  cursor: pointer;
+  font-family: 'Josefin Sans', sans-serif;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in;
+  width: 50px;
+  height: 30px;
+
+  background: #8A2387;
+  background: linear-gradient(to right, #F27121, #E94057, #8A2387);
+  position: relative;
+  text-align: center;
+  padding: 5px 0 0;
+  border: 2px solid black;
+  box-shadow: 2px 2px 2px 2px var(--darkLiver);
+  border-radius: 5px;
+
+}
+
+.message-edit-button {
+border: 2px solid black;
+box-shadow: 2px 2px 2px 2px var(--darkLiver);
+border-radius: 5px;
+  }
+
+#sendMessage {
+  cursor: pointer;
+  font-family: 'Josefin Sans', sans-serif;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in;
+  width: 50px;
+  height: 30px;
+
+  background: #8A2387;
+  background: linear-gradient(to right, #F27121, #E94057, #8A2387);
+  position: relative;
+  text-align: center;
+  padding: 5px 0 0;
+  font-weight: 200;
+  border: 2px solid black;
+box-shadow: 2px 2px 2px 2px var(--darkLiver);
+border-radius: 5px;
+}
+
 
 /* Styling Forms */
 

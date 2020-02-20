@@ -16,7 +16,6 @@ const populateMessageFields = (messageId) => {
     fetch(`http://localhost:8088/messages/${messageId}`) // promise response, for put call. Building the object by assigning values. These values are what will fill the entry fields, until the user makes an edit. When the user hits submit, it fires the PUT call.
       .then(response => response.json())
       .then(response => {
-          console.log(response);
           hiddenId.value = response.id;
           user.id = response.userId;
           message.value = response.message;
