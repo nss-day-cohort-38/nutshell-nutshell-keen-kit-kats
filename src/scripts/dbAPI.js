@@ -50,6 +50,15 @@ const dbAPI = {
   },
   fetchObjectById(resource, id) {
     return fetch(`${baseUrl}/${resource}/${id}`).then(resp => resp.json());
+  },
+  async putNewMessage (resource, resourceObject) {
+    const resp = await fetch(`${baseUrl}/${resource}/${resourceObject.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(resourceObject)
+    });
   }
 };
 

@@ -17,7 +17,7 @@ const populateMessageFields = (messageId) => {
       .then(response => response.json())
       .then(response => {
           console.log(response);
-         hiddenId.value = response.id;
+          hiddenId.value = response.id;
           user.id = response.userId;
           message.value = response.message;
 

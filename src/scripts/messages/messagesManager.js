@@ -13,11 +13,11 @@ const messageAPIManager = {
       const resource = {
         userId,
         message,
-        hiddenMessageId,
+        id: hiddenMessageId,
       };
       if (hiddenMessageId !== "") {
         dbAPI
-          .putObjectByResource("messages", resource)
+          .putNewMessage("messages", resource)
           .then(() => {
             document.getElementById("writeMessage").value = "";
 
@@ -29,13 +29,13 @@ const messageAPIManager = {
                 const message = data.message;
                 const userId = data.userId;
                 const username = data.user.username;
-                const messageId = message.id;
-                const hiddenId = data.hiddenMessageId;
+                const messageId = data.id;
+                const hiddenId = data.id;
                 const chatHTML = createMessageBoard(
-                  messageId,
+                  message,
                   userId,
                   username,
-                  message,
+                  messageId,
                   hiddenId
                 );
 
@@ -57,13 +57,13 @@ const messageAPIManager = {
               const message = data.message;
               const userId = data.userId;
               const username = data.user.username;
-              const messageId = message.id;
-              const hiddenId = data.hiddenMessageId;
+              const messageId = data.id;
+              const hiddenId = data.id;
               const chatHTML = createMessageBoard(
-                messageId,
+                message,
                 userId,
                 username,
-                message,
+                messageId,
                 hiddenId
               );
 
