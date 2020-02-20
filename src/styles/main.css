@@ -271,7 +271,7 @@ nav button:hover {
 }
 
 #writeMessage {
-  width: 300px;
+  width: 250px;
 }
 
 #message-list {
@@ -294,59 +294,54 @@ nav button:hover {
   z-index: 3;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .chat-room-landing-page {
   display: flex;
   justify-content: space-between;
-flex-direction: row;
-flex-wrap: nowrap;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 #chatButtonClose {
   cursor: pointer;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   text-transform: uppercase;
-  transition: all 0.2s ease-in;
   width: 50px;
   height: 30px;
 
-  background: #8A2387;
-  background: linear-gradient(to right, #F27121, #E94057, #8A2387);
+  background: #8a2387;
+  background: linear-gradient(to right, #f27121, #e94057, #8a2387);
   position: relative;
   text-align: center;
   padding: 5px 0 0;
   border: 2px solid black;
   box-shadow: 2px 2px 2px 2px var(--darkLiver);
   border-radius: 5px;
-
 }
 
 .message-edit-button {
-border: 2px solid black;
-box-shadow: 2px 2px 2px 2px var(--darkLiver);
-border-radius: 5px;
-  }
+  border: 2px solid black;
+  box-shadow: 2px 2px 2px 2px var(--darkLiver);
+  border-radius: 5px;
+}
 
 #sendMessage {
   cursor: pointer;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   text-transform: uppercase;
-  transition: all 0.2s ease-in;
   width: 50px;
   height: 30px;
 
-  background: #8A2387;
-  background: linear-gradient(to right, #F27121, #E94057, #8A2387);
-  position: relative;
-  text-align: center;
+  background: #8a2387;
+  background: linear-gradient(to right, #f27121, #e94057, #8a2387);
   padding: 5px 0 0;
   font-weight: 200;
   border: 2px solid black;
-box-shadow: 2px 2px 2px 2px var(--darkLiver);
-border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px var(--darkLiver);
+  border-radius: 5px;
 }
-
 
 /* Styling Forms */
 
